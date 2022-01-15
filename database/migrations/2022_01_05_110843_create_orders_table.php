@@ -30,6 +30,7 @@ class CreateOrdersTable extends Migration
             $table->string('province');
             $table->string('country');
             $table->string('zipcode');
+            $table->string('note');
             $table->enum('status'  ,['ordered' , 'delivered' , 'canceled'])->default('ordered');
             $table->boolean('is_shipping_different')->default(false);
             $table->timestamps();

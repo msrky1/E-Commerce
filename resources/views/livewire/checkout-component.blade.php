@@ -20,7 +20,9 @@
                         
                     </div>
                     
-                </div>
+                </div>  
+                
+                
                 <form class="row checkout-form inputs-border inputs-bg" wire:submit.prevent="placeOrder">
                     <div class="col-md-6">
                         <div class="billing-field">
@@ -95,16 +97,29 @@
                                         </select>
                                     </div>
                                 </div>
+                                
                             </div>
                             
                            
                          
                             <div class="form-group">
-                                <label>Notunuz Var mı?s</label>
+                                <label>Not Eklemek İster Misiniz?</label>
                                 <textarea class="form-control"
-                                    placeholder="Notes about your order, e.g. special notes for delivery."
-                                    rows="5"></textarea>
+                                    placeholder="Lütfen notunuzu yazınız"
+                                    rows="5" wire:model="note"></textarea>
                             </div>
+                            <div class="text-right">
+                                <button type="submit" class="btn btn-primary">
+                                  Adresi Kaydet
+                                </button>
+                            </div>
+                        </div>
+                        <div class="text-left">
+                            @if (Session::has('get_messages'))
+    
+                            <strong style="color:green"> {{Session::get('get_messages')}}</strong>
+                                
+                            @endif
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -163,7 +178,7 @@
                                             <tr class="order-total">
                                                 <th colspan="2">KDV</th>
                                                 <td>
-                                                    <strong><span class="amount">½18->25</span></strong>
+                                                    <strong><span class="amount">%18</span></strong>
                                                 </td>
                                             </tr>
                                             @if (Session::has('checkout'))
@@ -232,6 +247,7 @@
                             </div>
                         </div>
                     </div>
+                 
                 </form>
             </div>
         </section>

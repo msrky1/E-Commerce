@@ -14,7 +14,6 @@ class CheckoutComponent extends Component
 {
 
 
-    public $shipping_adress;
 
     
     public $firstname;
@@ -29,41 +28,16 @@ class CheckoutComponent extends Component
     public $zipcode;
     public $text_not;
     public $thankyou;
-
-    public $s_firstname;
-    public $s_lastname;
-    public $s_email;
-    public $s_mobile;
-    public $s_line1;
-    public $s_line2;
-    public $s_city;
-    public $s_country;
-    public $s_province;   
-    public $s_zipcode;
-    public $s_text_not;
-    public $s_thankyou;
+    public $note;
 
 
     public $paymentmode;
 
     
-   public function updated()
-   {
-
-    if($this->ship_to_different) 
-    {
-        
-
-    }
-
-   }
+  
     public function placeOrder()
     {
-      $this->validate([
-           
-        'paymentmode' => 'rquired',
-
-      ]);
+     
 
       $order = new Order();
       $order -> user_id = Auth::user()->id;
@@ -72,7 +46,7 @@ class CheckoutComponent extends Component
       $order -> tax = session()->get('checkout') ['tax'];
       $order -> total = session()->get('checkout') ['total'];
 
-      $order->firsname = $this->firstname;
+      $order->firstname = $this->firstname;
       $order->lastname = $this->lastname;
       $order->email = $this->email;
       $order->mobile = $this->mobile;
@@ -82,9 +56,10 @@ class CheckoutComponent extends Component
       $order->province = $this->province;
       $order->country = $this->country;
       $order->zipcode = $this->zipcode;
+      $order->note = $this->note;
       $order->status = 'ordered';
-      $order->is_shipping_different = $this->ship_to_different ? 1:0;
       $order->save();
+
 
 
       foreach(Cart::instance('cart')->content() as $item)
@@ -102,27 +77,9 @@ class CheckoutComponent extends Component
   
   
       }
+      session()->flash('get_messages' , 'Adres Kaydedildi');
 
-      if($this->ship_to_different)
-      {
-
-       $shipping = new Shipping();
-       $shipping ->firstname = $this->s_firtname;
-       $shipping ->lastname = $this->s_lastname;
-       $shipping ->email = $this->s_email;
-       $shipping ->mobile = $this->s_mobile;
-       $shipping ->line1 = $this->s_line1;
-       $shipping ->line2 = $this->s_line2;
-       $shipping ->city = $this->s_city;
-       $shipping ->province = $this->s_province;
-       $shipping ->country = $this->s_country;
-       $shipping ->zipcode = $this->s_zipcode;
-       $shipping ->save();
-       
-
-
-
-      }
+   
      if($this->paymentmode == 'cod')
      {
 
@@ -177,7 +134,10 @@ class CheckoutComponent extends Component
 
 
     public function render()
-    {
-        return view('livewire.checkout-component')->layout('layouts.base');
+    { 
+
+      $order = Order::all();
+       
+        return view('livewire.checkout-component' , ["order" => $order])->layout('layouts.base');
     }
 }
