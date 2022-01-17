@@ -167,7 +167,7 @@ Route::get('admin/coupon/edit/{coupon_id}' , AdminEditCouponComponent::class)->n
 Route::get('/iletisim' , ContactComponent::class)->name('contact');
 
 
-//sakkımızda
+//Hakkımızda
 
 Route::get('/hakkimizda' , AboutComponent::class)->name('about');
 

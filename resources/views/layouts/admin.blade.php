@@ -627,6 +627,15 @@
 
                         </ul>
                     </li>
+                    <li class="sm_menu_btm"> <a href="javascript:void(0);" class="menu-toggle"><i
+                        class="zmdi zmdi-map"></i><span>Sayfalar</span> <span
+                        class="badge badge-default float-right">2</span></a>
+                <ul class="ml-menu">
+                    <li><a href="google.html">Hakkımızda</a></li>
+                    <li><a href="yandex.html">İletişim</a></li>
+
+                </ul>
+            </li>
                 </ul>
             </div>
         </div>

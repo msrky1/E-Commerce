@@ -22,8 +22,8 @@
                     
                 </div>  
                 
-                
-                <form class="row checkout-form inputs-border inputs-bg" wire:submit.prevent="placeOrder">
+          
+                <form class="row checkout-form inputs-border inputs-bg" wire:submit.prevent="placeAdress">
                     <div class="col-md-6">
                         <div class="billing-field">
                             <h3 class="title">Kargo Adresi</h3>

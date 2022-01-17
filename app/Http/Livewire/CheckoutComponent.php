@@ -6,8 +6,10 @@ use Livewire\Component;
 use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\Shipping;
+use App\Models\User;
 use Auth;
 use Cart;
+
 
 
 class CheckoutComponent extends Component
@@ -35,7 +37,7 @@ class CheckoutComponent extends Component
 
     
   
-    public function placeOrder()
+    public function placeAdress()
     {
      
 
@@ -80,48 +82,58 @@ class CheckoutComponent extends Component
       session()->flash('get_messages' , 'Adres Kaydedildi');
 
    
-     if($this->paymentmode == 'cod')
-     {
+    }
 
-      $transaction = new Transaction();
-      $transaction ->user_id = Auth::user()->id;
-      $transaction ->order_id = $order->id;
-      $transaction ->mode = 'cod';
-      $transaction ->status = 'pending';
-      $transaction ->save();
+
+     public function placeOrder(){
+
+
+      if($this->paymentmode == 'cod')
+      {
+ 
+       $transaction = new Transaction();
+       $transaction ->user_id = Auth::user()->id;
+       $transaction ->order_id = $order->id;
+       $transaction ->mode = 'cod';
+       $transaction ->status = 'pending';
+       $transaction ->save();
+ 
+ 
+      }
+       
+      $this->thankyou = 1;
+       Cart::instance('cart')->destroy();
+       session()->forget('checkout');
+ 
+     }
+ 
+ 
+     public function verifyForCheckout()
+     {
+ 
+         if(!Auth::check())
+         {
+          
+              return redirect()->route('login');
+ 
+ 
+         }
+         else if ($this->thankyou){
+ 
+             return redirect()->route('thankyou');
+         }
+         else if (!session()->get('checkout'))
+          {
+           
+           $this->verifyForCheckout();
+           return redirect()->route('product.cart');
+ 
+         }
 
 
      }
-      
-     $this->thankyou = 1;
-      Cart::instance('cart')->destroy();
-      session()->forget('checkout');
 
-    }
-
-
-    public function verifyForCheckout()
-    {
-
-        if(!Auth::check())
-        {
-         
-             return redirect()->route('login');
-
-
-        }
-        else if ($this->thankyou){
-
-            return redirect()->route('thankyou');
-        }
-        else if (!session()->get('checkout'))
-         {
-          
-          $this->verifyForCheckout();
-          return redirect()->route('product.cart');
-
-        }
-    }
+    
 
 
 
@@ -137,7 +149,8 @@ class CheckoutComponent extends Component
     { 
 
       $order = Order::all();
+      $user = User::all();
        
-        return view('livewire.checkout-component' , ["order" => $order])->layout('layouts.base');
+        return view('livewire.checkout-component' , ["order" => $order , 'user' => $user])->layout('layouts.base');
     }
 }
