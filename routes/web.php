@@ -31,7 +31,12 @@ use App\Http\livewire\Admin\SalePrice\SalePriceAddComponent;
 use App\Http\livewire\Admin\SalePrice\SalePriceEditComponent;
 use App\Http\livewire\Admin\AdminCouponsComponent;
 use App\Http\livewire\Admin\AdminAddCouponsComponent;
- use App\Http\livewire\Admin\AdminEditCouponComponent;
+use App\Http\livewire\Admin\AdminEditCouponComponent;
+use App\Http\Livewire\Admin\About\AdminAboutComponent;
+use App\Http\Livewire\Admin\About\AdminAboutEditComponent;
+use App\Http\Livewire\Admin\Contact\AdminContactComponent;
+use App\Http\Livewire\Admin\Contact\AdminContactEditComponent;
+
 
  use App\Http\livewire\Contact\ContactComponent;
  use App\Http\livewire\About\AboutComponent;
@@ -94,6 +99,18 @@ Route::get('/thankyou' , ThankyouComponent::class)->name('thankyou');
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //    return view('dashboard');
 // })->name('dashboard');
+
+
+//admin contact
+
+Route::get('/iletisim' , ContactComponent::class)->name('contact');
+
+
+//Hakkımızda
+
+Route::get('/hakkimizda' , AboutComponent::class)->name('about');
+
+
 
 
 
@@ -162,16 +179,6 @@ Route::get('admin/coupon/edit/{coupon_id}' , AdminEditCouponComponent::class)->n
 
 
 
-//admin contact
-
-Route::get('/iletisim' , ContactComponent::class)->name('contact');
-
-
-//Hakkımızda
-
-Route::get('/hakkimizda' , AboutComponent::class)->name('about');
-
-
 
 //Admin Mail Servis
 
@@ -181,6 +188,13 @@ Route::get('/hakkimizda' , AboutComponent::class)->name('about');
 //Admin Hakkımızda Sayfası
 
 
+Route::get('/admin/about' , AdminAboutComponent::class) ->name('admin.about');
+Route::get('/admin/about/edit/{id}' , AdminAboutEditComponent::class) ->name('admin.about.edit');
+
+//admin iletişim sayfası 
+
+Route::get('/admin/contact' , AdminContactComponent::class) ->name('admin.contact');
+Route::get('/admin/contact/edit/{id}' , AdminContactEditComponent::class) ->name('admin.contact.edit');
 
 
 //Admin Site İçi Arama

@@ -3,11 +3,13 @@
 namespace App\Http\Livewire\Contact;
 
 use Livewire\Component;
+use App\Models\Contact\Contact;
 
 class ContactComponent extends Component
 {
     public function render()
-    {
-        return view('livewire.contact.contact-component')->layout('layouts.base');
+    {   
+        $contact = Contact::all();
+        return view('livewire.contact.contact-component' , ['contact' => $contact])->layout('layouts.base');
     }
 }

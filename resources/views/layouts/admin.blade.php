@@ -13,20 +13,21 @@
     <link rel="stylesheet" href="{{ asset('admin') }}/assets/css/color_skins.css">
 
     <!-- Morris Chart Css-->
-<link rel="stylesheet" href="{{ asset('admin') }}/assets/plugins/morrisjs/morris.css" />
-<!-- Colorpicker Css -->
-<link rel="stylesheet" href="{{ asset('admin') }}/assets/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.css" />
-<!-- Multi Select Css -->
-<link rel="stylesheet" href="{{ asset('admin') }}/assets/plugins/multi-select/css/multi-select.css">
-<!-- Bootstrap Spinner Css -->
-<link rel="stylesheet" href="{{ asset('admin') }}/assets/plugins/jquery-spinner/css/bootstrap-spinner.css">
-<!-- Bootstrap Tagsinput Css -->
-<link rel="stylesheet" href="{{ asset('admin') }}/assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css">
-<!-- Bootstrap Select Css -->
-<link rel="stylesheet" href="{{ asset('admin') }}/assets/plugins/bootstrap-select/css/bootstrap-select.css" />
-<!-- noUISlider Css -->
-<link rel="stylesheet" href="{{ asset('admin') }}/assets/plugins/nouislider/nouislider.min.css" />
-<!-- Custom Css -->
+    <link rel="stylesheet" href="{{ asset('admin') }}/assets/plugins/morrisjs/morris.css" />
+    <!-- Colorpicker Css -->
+    <link rel="stylesheet"
+        href="{{ asset('admin') }}/assets/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.css" />
+    <!-- Multi Select Css -->
+    <link rel="stylesheet" href="{{ asset('admin') }}/assets/plugins/multi-select/css/multi-select.css">
+    <!-- Bootstrap Spinner Css -->
+    <link rel="stylesheet" href="{{ asset('admin') }}/assets/plugins/jquery-spinner/css/bootstrap-spinner.css">
+    <!-- Bootstrap Tagsinput Css -->
+    <link rel="stylesheet" href="{{ asset('admin') }}/assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css">
+    <!-- Bootstrap Select Css -->
+    <link rel="stylesheet" href="{{ asset('admin') }}/assets/plugins/bootstrap-select/css/bootstrap-select.css" />
+    <!-- noUISlider Css -->
+    <link rel="stylesheet" href="{{ asset('admin') }}/assets/plugins/nouislider/nouislider.min.css" />
+    <!-- Custom Css -->
 
 
     <!-- Bootstrap Material Datetime Picker Css -->
@@ -179,7 +180,8 @@
                 <a href="javascript:void(0);" class="js-right-sidebar"><i
                         class="zmdi zmdi-settings zmdi-hc-spin"></i></a>
                 <a href="{{ route('logout') }}"
-                onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="mega-menu"><i class="zmdi zmdi-power"></i></a>
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                    class="mega-menu"><i class="zmdi zmdi-power"></i></a>
             </li>
             <form id="logout-form" action="{{ route('logout') }}" method="POST">
                 @csrf
@@ -542,16 +544,16 @@
                     <li>
                         <div class="user-info m-b-20">
                             <div class="image">
-                                @if ( Auth::user()->profile_photo_path == null )
-                                <a href=""><img src="{{ asset('admin') }}/assets/images/profile_av.jpg"
-                                    alt="User"></a>
+                                @if (Auth::user()->profile_photo_path == null)
+                                    <a href=""><img src="{{ asset('admin') }}/assets/images/profile_av.jpg"
+                                            alt="User"></a>
                                 @else
-                               
+
                                 @endif
-                               
+
                             </div>
                             <div class="detail">
-                                <h6>{{ Auth::user()->name }}  </h6>
+                                <h6>{{ Auth::user()->name }} </h6>
                                 <p class="m-b-0">{{ Auth::user()->email }}</p>
                                 <a href="javascript:void(0);" title="" class=" waves-effect waves-block"><i
                                         class="zmdi zmdi-facebook-box"></i></a>
@@ -567,7 +569,7 @@
                     <li class="header">Admin | <a href="/"> Siteye Git </a></li>
                     <li> <a href="{{ route('admin.index') }}"><i class="zmdi zmdi-home"></i><span>Admin
                                 Paneli</span></a></li>
-                        
+
                     <li><a href="javascript:void(0);" class="menu-toggle"><i
                                 class="zmdi zmdi-apps"></i><span>Uygulamalar</span>
                             <span class="badge badge-success float-right">12</span></a>
@@ -582,7 +584,7 @@
                             <li><a href="/file-manager">Dosya Yöneticisi</a></li>
                             <li><a href="/iletisim">İletişim Bilgileri</a></li>
                             <li><a href="/mail-gonder">Mail Gönder</a></li>
-                                            
+
                             <li><a href="/kargolar">Sipariş - Kargolar</a></li>
                             <li><a href="/kargo-takip">Kargo Takip</a></li>
                             <li><a href="/kargo-takip">Site Ayarları</a></li>
@@ -591,32 +593,32 @@
                     </li>
 
                     <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-assignment">
-                        </i><span>Kuponlar</span> <span class="badge badge-warning float-right">2</span></a>
+                            </i><span>Kuponlar</span> <span class="badge badge-warning float-right">2</span></a>
 
-                <ul class="ml-menu">
-                    
-                    <li><a href="{{route('admin.coupons')}}">Kuponları Görüntüle</a></li>
-                    <li><a href="{{route('admin.coupons.add')}}">Kupon Ekle</a></li>
+                        <ul class="ml-menu">
+
+                            <li><a href="{{ route('admin.coupons') }}">Kuponları Görüntüle</a></li>
+                            <li><a href="{{ route('admin.coupons.add') }}">Kupon Ekle</a></li>
 
 
-                </ul>
-            </li>
+                        </ul>
+                    </li>
 
 
                     <li class="sm_menu_btm"> <a href="javascript:void(0);" class="menu-toggle"><i
-                        class="zmdi zmdi-lock"></i><span>Kullanıcı</span> <span
-                        class="badge badge-default float-right">5</span></a>
-                <ul class="ml-menu">
-                    <li><a href="{{route('admin.user')}}">Tüm Kullanıcılar</a></li>
+                                class="zmdi zmdi-lock"></i><span>Kullanıcı</span> <span
+                                class="badge badge-default float-right">5</span></a>
+                        <ul class="ml-menu">
+                            <li><a href="{{ route('admin.user') }}">Tüm Kullanıcılar</a></li>
 
-                    <li><a href="{{route('login')}}">Kullanıcı Değiştir</a></li>
-                    <li><a href="{{route('admin.user.add')}}">Kullanıcı Ekle</a></li>
-                    <li><a href="forgot-password.html">Şifreni Değiştir</a></li>
-                   
-                    <li><a href="sign-in.html">Kullanıcı Engelle</a></li>
+                            <li><a href="{{ route('login') }}">Kullanıcı Değiştir</a></li>
+                            <li><a href="{{ route('admin.user.add') }}">Kullanıcı Ekle</a></li>
+                            <li><a href="forgot-password.html">Şifreni Değiştir</a></li>
 
-                </ul>
-            </li>
+                            <li><a href="sign-in.html">Kullanıcı Engelle</a></li>
+
+                        </ul>
+                    </li>
 
                     <li class="sm_menu_btm"> <a href="javascript:void(0);" class="menu-toggle"><i
                                 class="zmdi zmdi-map"></i><span>Haritalar</span> <span
@@ -627,15 +629,13 @@
 
                         </ul>
                     </li>
-                    <li class="sm_menu_btm"> <a href="javascript:void(0);" class="menu-toggle"><i
-                        class="zmdi zmdi-map"></i><span>Sayfalar</span> <span
-                        class="badge badge-default float-right">2</span></a>
-                <ul class="ml-menu">
-                    <li><a href="google.html">Hakkımızda</a></li>
-                    <li><a href="yandex.html">İletişim</a></li>
-
-                </ul>
-            </li>
+                    <li class="sm_menu_btm"> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-copy"></i><span>Sayfalar</span> <span class="badge badge-primary float-right">2</span></a>
+                        <ul class="ml-menu">
+                            <li><a href="{{route('admin.contact')}}">İletişim</a></li>
+                            <li><a href="{{route('admin.about')}}">Hakkımızda</a></li>
+                           
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -670,7 +670,6 @@
     <!-- Custom Js -->
     <script src="{{ asset('admin') }}/assets/js/pages/tables/jquery-datatable.js"></script>
 
-    
 
 
 
@@ -679,13 +678,19 @@
 
 
 
-<script src="{{ asset('admin') }}/assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script> <!-- Bootstrap Colorpicker Js --> 
 
-<script src="{{ asset('admin') }}/assets/plugins/jquery-inputmask/jquery.inputmask.bundle.js"></script> <!-- Input Mask Plugin Js --> 
-<script src="{{ asset('admin') }}/assets/plugins/multi-select/js/jquery.multi-select.js"></script> <!-- Multi Select Plugin Js --> 
-<script src="{{ asset('admin') }}/assets/plugins/jquery-spinner/js/jquery.spinner.js"></script> <!-- Jquery Spinner Plugin Js --> 
+    <script src="{{ asset('admin') }}/assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+    <!-- Bootstrap Colorpicker Js -->
 
-<script src="{{ asset('admin') }}/assets/plugins/nouislider/nouislider.js"></script> <!-- noUISlider Plugin Js --> 
+    <script src="{{ asset('admin') }}/assets/plugins/jquery-inputmask/jquery.inputmask.bundle.js"></script>
+    <!-- Input Mask Plugin Js -->
+    <script src="{{ asset('admin') }}/assets/plugins/multi-select/js/jquery.multi-select.js"></script>
+    <!-- Multi Select Plugin Js -->
+    <script src="{{ asset('admin') }}/assets/plugins/jquery-spinner/js/jquery.spinner.js"></script>
+    <!-- Jquery Spinner Plugin Js -->
+
+    <script src="{{ asset('admin') }}/assets/plugins/nouislider/nouislider.js"></script>
+    <!-- noUISlider Plugin Js -->
 
 
 
