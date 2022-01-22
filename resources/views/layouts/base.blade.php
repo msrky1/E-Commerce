@@ -357,11 +357,16 @@
             </div>
             <div class="copyright text-center">
                 <p>
-                    © Copyright 2016-2020. All Rights Reserved.
+                    © Copyright 2021-<script>
+                     let getData = new Date();
+
+                      console.log(getData.getFullYear())
+                    
+                     </script>. Tüm Hakları Saklıdır
                     <br>
-                    Created by
+                   Oluşturan 
                     <a href="/" class="effect">
-                        Hussam Abd
+                       Mahmut Sarıkaya
                     </a>
                 </p>
             </div>
