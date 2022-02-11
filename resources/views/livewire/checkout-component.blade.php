@@ -124,7 +124,7 @@
                     <div class="col-md-6">
                         <div class="review-order">
                             <div class="box">
-                                <h3 class="title">Siparişiniz</h3>
+                                <h3 class="title">Siparişiniz</h3>  
                                 <div class="table-responsive">
                                     <table class="table cart-table review-order-table">
                                         <thead>

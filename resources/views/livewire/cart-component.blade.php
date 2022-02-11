@@ -44,7 +44,7 @@
                                                 </td>
                                                 <td class="product-thumbnail">
                                                     <a href="{{ route('product.details', $item->model->slug) }}">
-                                                        <img src="{{ asset('storage') }}/products/{{ $item->model->image }}"
+                                                        <img width="40" class=".img-hover-funct" src="{{ asset('storage') }}/products/{{ $item->model->image }}"
                                                             class="img-fluid" alt="{{ $item->model->image }}">
                                                     </a>
                                                 </td>
@@ -158,7 +158,7 @@
                                                                 <tr class="shipping">
                                                                     <th>İndirim</th>
                                                                     <td class="text-right">
-                                                                        <span class="amount">
+                                                                        <span style="font-family: 'Montserrat' ; font-size: 16px; color:green;" class="amount">
                                                                             ({{ Session::get('coupon')['code'] }})
                                                                             {{ number_format($discount, 2) }}₺</span>
 
@@ -299,3 +299,4 @@
     </div>
 
 </main>
+
