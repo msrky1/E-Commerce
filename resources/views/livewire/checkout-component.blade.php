@@ -22,8 +22,10 @@
                     
                 </div>  
                 
+
+              
           
-                <form class="row checkout-form inputs-border inputs-bg" wire:submit.prevent="placeAdress">
+                <form class="row checkout-form inputs-border inputs-bg" wire:submit.prevent="placeOrder">
                     <div class="col-md-6">
                         <div class="billing-field">
                             <h3 class="title">Kargo Adresi</h3>
@@ -108,11 +110,7 @@
                                     placeholder="Lütfen notunuzu yazınız"
                                     rows="5" wire:model="note"></textarea>
                             </div>
-                            <div class="text-right">
-                                <button type="submit" class="btn btn-primary">
-                                  Adresi Kaydet
-                                </button>
-                            </div>
+                           
                         </div>
                         <div class="text-left">
                             @if (Session::has('get_messages'))
@@ -122,6 +120,7 @@
                             @endif
                         </div>
                     </div>
+
                     <div class="col-md-6">
                         <div class="review-order">
                             <div class="box">
@@ -135,15 +134,20 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @foreach (Cart::instance('cart')->content()  as $item)
+
                                             <tr class="item">
                                                 <td class="product-name" colspan="2">
-                                                    Twill Silk Scarf
-                                                    <strong class="product-quantity">× 1</strong>
+                                                    {{$item->model->name}}
+
+                                                    <strong class="product-quantity">× {{$item->model->item}}
+                                                    </strong>
                                                 </td>
                                                 <td class="product-total">
                                                     <span class="amount">$90.00</span>
                                                 </td>
                                             </tr>
+                                            @endforeach
                                             <tr class="item">
                                                 <td class="product-name" colspan="2">
                                                     Patterned Scarf
@@ -194,6 +198,8 @@
                                         </tfoot>
                                     </table>
                                 </div>
+                         
+
                                 <h2>Ödeme Yöntemleri</h2>
                                 <div id="payment" class="checkout-payment">
                                     <ul class="payment-methods">
@@ -247,7 +253,7 @@
                             </div>
                         </div>
                     </div>
-                 
+
                 </form>
             </div>
         </section>

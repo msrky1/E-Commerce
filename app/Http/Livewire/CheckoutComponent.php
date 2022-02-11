@@ -38,9 +38,10 @@ class CheckoutComponent extends Component
 
     
   
-    public function placeAdress()
-    {
-     
+  
+
+     public function placeOrder(){
+
 
       $order = new Order();
       $order -> user_id = Auth::user()->id;
@@ -81,14 +82,6 @@ class CheckoutComponent extends Component
   
       }
       session()->flash('get_messages' , 'Adres Kaydedildi');
-
-   
-    }
-
-
-     public function placeOrder(){
-
-
       if($this->paymentmode == 'cod')
       {
  
