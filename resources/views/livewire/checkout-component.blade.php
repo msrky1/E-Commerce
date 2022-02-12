@@ -120,7 +120,7 @@
                             @endif
                         </div>
                     </div>
-
+                    @if (Cart::instance('cart')->count() > 0)
                     <div class="col-md-6">
                         <div class="review-order">
                             <div class="box">
@@ -141,37 +141,20 @@
                                                     {{$item->model->name}}
 
                                                     <strong class="product-quantity">× {{$item->model->item}}
-                                                    </strong>
+                                                    </strong> {{$item->qty}}
                                                 </td>
                                                 <td class="product-total">
-                                                    <span class="amount">$90.00</span>
+                                                    <span class="amount">{{ $item->subtotal }}₺</span>
                                                 </td>
                                             </tr>
                                             @endforeach
-                                            <tr class="item">
-                                                <td class="product-name" colspan="2">
-                                                    Patterned Scarf
-                                                    <strong class="product-quantity">× 1</strong>
-                                                    <table class="variation">
-                                                        <tbody>
-                                                            <tr>
-                                                                <th class="variation-size">Size:</th>
-                                                                <td class="variation-size">
-                                                                    <p>Large</p>
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </td>
-                                                <td class="product-total">
-                                                    <span class="amount">$450.00</span>
-                                                </td>
-                                            </tr>
+                                            
                                         </tbody>
+                                        
                                         <tfoot>
                                             <tr class="cart-subtotal">
                                                 <th colspan="2">Ara Toplam</th>
-                                                <td><span class="amount">$540.00</span></td>
+                                                <td><span class="amount">{{ Cart::instance('cart')->subtotal() }}₺</span></td>
                                             </tr>
                                             <tr class="shipping">
                                                 <th colspan="2">Kargo</th>
@@ -182,7 +165,7 @@
                                             <tr class="order-total">
                                                 <th colspan="2">KDV</th>
                                                 <td>
-                                                    <strong><span class="amount">%18</span></strong>
+                                                    <strong><span class="amount">%18 / {{ Cart::instance('cart')->tax() }}₺</span></strong>
                                                 </td>
                                             </tr>
                                             @if (Session::has('checkout'))
@@ -191,7 +174,7 @@
                                             <tr class="order-total">
                                                 <th colspan="2"> Genel Topkam</th>
                                                 <td>
-                                                    <strong><span class="amount">{{Session::get('checkout')['total']}}</span></strong>
+                                                    <strong><span class="amount">{{Session::get('checkout')['total']}}₺</span></strong>
                                                 </td>
                                             </tr>
                                             @endif
@@ -253,7 +236,7 @@
                             </div>
                         </div>
                     </div>
-
+                     @endif
                 </form>
             </div>
         </section>

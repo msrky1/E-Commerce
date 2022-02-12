@@ -53,7 +53,7 @@
                                                 </td>
                                                 <td class="product-price">
                                                     <span
-                                                        class="amount">₺{{ $item->model->regular_price }}</span>
+                                                        class="amount">{{ $item->model->regular_price }}₺</span>
                                                 </td>
                                                 <td class="product-quantity">
                                                     <div class="quantity">
