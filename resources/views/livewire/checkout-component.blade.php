@@ -141,7 +141,7 @@
                                                     {{$item->model->name}}
 
                                                     <strong class="product-quantity">× {{$item->model->item}}
-                                                    </strong> {{$item->qty}}
+                                                    </strong> {{$item->qty}} Adet
                                                 </td>
                                                 <td class="product-total">
                                                     <span class="amount">{{ $item->subtotal }}₺</span>
@@ -162,6 +162,20 @@
                                                     <p>Ücretsiz Kargo</p>
                                                 </td>
                                             </tr>
+
+                                            @if (Session::has('coupon'))
+                                            <tr class="cart-subtotal">
+                                                <th colspan="2">Kupon kodu</th>
+                                                <td><span class="amount">  ({{ Session::get('coupon')['code'] }})
+                                                    {{ number_format($discount, 2) }}₺</span></td>
+                                            </tr>
+                                            <tr class="cart-subtotal">
+                                                <th colspan="2">İndirimli Ara Toplam</th>
+                                                <td><span class="amount">   {{ number_format($subtotalAfterDiscount, 2) }}₺</span></td>
+                                            </tr>
+                                         
+                                            @endif
+
                                             <tr class="order-total">
                                                 <th colspan="2">KDV</th>
                                                 <td>
