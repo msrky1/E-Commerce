@@ -20,7 +20,7 @@ class CreateHomeSlidersTable extends Migration
             $table->string('price');
             $table->string('link');
             $table->string('image');
-            $table->boolean('status');
+            $table->string('status');
 
 
             $table->timestamps();

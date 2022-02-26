@@ -88,7 +88,7 @@ class CheckoutComponent extends Component
   
   
       }
-      session()->flash('get_messages' , 'Adres Kaydedildi');
+      session()->flash('get_messages' , 'Ödeme Gerçekleşti');
       if($this->paymentmode == 'cod')
       {
  

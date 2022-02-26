@@ -1175,9 +1175,6 @@ select {
 .mt-1 {
 	margin-top: 0.25rem;
 }
-.ml-2 {
-	margin-left: 0.5rem;
-}
 .mb-6 {
 	margin-bottom: 1.5rem;
 }
@@ -1195,6 +1192,9 @@ select {
 }
 .ml-1 {
 	margin-left: 0.25rem;
+}
+.ml-2 {
+	margin-left: 0.5rem;
 }
 .-mr-0\.5 {
 	margin-right: -0.125rem;
@@ -1220,20 +1220,23 @@ select {
 .mb-0 {
 	margin-bottom: 0px;
 }
+.mb-5 {
+	margin-bottom: 1.25rem;
+}
 .mr-auto {
 	margin-right: auto;
 }
 .ml-auto {
 	margin-left: auto;
 }
-.mb-3 {
-	margin-bottom: 0.75rem;
-}
 .mb-2 {
 	margin-bottom: 0.5rem;
 }
 .ml-0 {
 	margin-left: 0px;
+}
+.mb-3 {
+	margin-bottom: 0.75rem;
 }
 .-mt-px {
 	margin-top: -1px;
@@ -1396,6 +1399,9 @@ select {
 }
 .grid-cols-1 {
 	grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.flex-row {
+	flex-direction: row;
 }
 .flex-col {
 	flex-direction: column;
