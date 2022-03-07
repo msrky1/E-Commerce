@@ -267,7 +267,7 @@
                 <div class="widgets">
                     <div class="row">
                         <div class="col-lg-3 col-md-6 widget widget-about">
-                            <h3 class="widget-title">Sham</h3>
+                            <h3 class="widget-title">Mark Down</h3>
                             <p>
                                 Text
                             </p>

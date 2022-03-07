@@ -545,7 +545,7 @@
                         <div class="user-info m-b-20">
                             <div class="image">
                                 @if (Auth::user()->profile_photo_path == null)
-                                    <a href=""><img src="{{ asset('admin') }}/assets/images/profile_av.jpg"
+                                    <a href=""><img src="{{ asset('admin') }}/assets/images/profile_avv.jpg"
                                             alt="User"></a>
                                 @else
 
@@ -587,7 +587,7 @@
 
                             <li><a href="/kargolar">Sipariş - Kargolar</a></li>
                             <li><a href="/kargo-takip">Kargo Takip</a></li>
-                            <li><a href="/kargo-takip">Site Ayarları</a></li>
+                            <li><a href="/settings">Site Ayarları</a></li>
 
                         </ul>
                     </li>

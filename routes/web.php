@@ -36,6 +36,10 @@ use App\Http\Livewire\Admin\About\AdminAboutComponent;
 use App\Http\Livewire\Admin\About\AdminAboutEditComponent;
 use App\Http\Livewire\Admin\Contact\AdminContactComponent;
 use App\Http\Livewire\Admin\Contact\AdminContactEditComponent;
+use App\Http\Livewire\Admin\Settings\AdminSettingsComponent;
+
+
+
 
 
  use App\Http\livewire\Contact\ContactComponent;
@@ -209,6 +213,10 @@ Route::get('/admin/contact/edit/{id}' , AdminContactEditComponent::class) ->name
 
 //Kargo Takip Sistemi 
 
+
+// Site Ayarları
+
+Route::get('/settings' , AdminSettingsComponent::class);
 
 
 
