@@ -51,10 +51,10 @@
                                         wire:model="slug" required />
                                 </div>
                                 <div class="form-group form-float">
-                                    <select class="form-control show-tick" required wire:model="stock_status" >
-                                        
-                                            <option value="instock"> Stok Var</option>
-                                            <option value="outofstock"> Stok Yok</option>
+                                    <select class="form-control show-tick" required wire:model="stock_status">
+
+                                        <option value="instock"> Stok Var</option>
+                                        <option value="outofstock"> Stok Yok</option>
 
 
 
@@ -71,7 +71,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group form-float">
-                                    <select class="form-control show-tick" wire:model="sale" >
+                                    <select class="form-control show-tick" wire:model="sale">
                                         <option value="">-- İndirim Seç --</option>
                                         @foreach ($sales as $s)
                                             <option value="{{ $s->id }}">{{ $s->name }}</option>
@@ -81,8 +81,8 @@
                                     </select>
                                 </div>
                                 <div class="form-group form-float">
-                                    <textarea name="short_description" cols="30" rows="5"
-                                        placeholder="Ürünün Kısa Açıklaması" class="form-control no-resize" required
+                                    <textarea name="short_description" cols="30" rows="5" placeholder="Ürünün Kısa Açıklaması"
+                                        class="form-control no-resize" required
                                         wire:model="short_description"></textarea>
                                 </div>
                                 <div class="form-group form-float">
@@ -117,7 +117,7 @@
                                 <div class="body">
                                     <div class="form-group">
                                         <input type="file" class="form-control-file" id="exampleInputFile"
-                                            aria-describedby="fileHelp" wire:model="image">
+                                            aria-describedby="fileHelp" wire:model="image"><br>
                                         <small id="fileHelp" class="form-text text-muted">.wbm .jpg .png boyutu düşük
                                             Dosya Seçin</small>
 
@@ -130,11 +130,11 @@
                                     </div>
 
                                 </div>
-                           
 
-                                    <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit">
-                                        Ürünü Ekle
-                                    </button>
+
+                                <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit">
+                                    Ürünü Ekle
+                                </button>
                             </form>
                         </div>
                     </div>

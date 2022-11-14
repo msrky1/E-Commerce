@@ -59,7 +59,7 @@ class ProductsAddComponent extends Component
               $product->SKU = $this->SKU;
 
               $product->featured = $this->featured;
-              $product->stock_status = $this->stock_status;
+              $product->stock_status = $this->stock_status; 
 
               $product->quantity = $this->quantity;
               $imageName = Carbon::now()->timestamp. '.' . $this->image->extension();

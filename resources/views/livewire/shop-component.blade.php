@@ -233,7 +233,7 @@
                             </div>
                             <p class="product-price">
                                 <ins>
-                                    <span class="amount">{{$product->regular_price}}</span>
+                                    <span class="amount">{{$product->regular_price}}$</span>
                                 </ins>
                             </p>
                         </div>

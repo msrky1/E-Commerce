@@ -42,6 +42,10 @@ use App\Http\Livewire\Admin\Settings\AdminSettingsComponent;
 
 
 
+
+
+
+
  use App\Http\livewire\Contact\ContactComponent;
  use App\Http\livewire\About\AboutComponent;
  use App\Htpp\Livewire\Adress\ShippingAdressComponent;
@@ -135,7 +139,7 @@ Route::middleware(['auth:sanctum' , 'verified', 'authadmin'])->group(function(){
    Route::get('admin/category-add', AdminCategoryAddComponent::class)->name('admin.category.add');
  //   Route::get('admin/category-delete', AdminCategoryDeleteComponent::class)->name('admin.category.delete');
     Route::get('/admin/category/edit/{category_slug}', AdminEditCategoryComponent::class)->name('admin.categoryedit');
-
+    
 
     Route::get('/admin/categories' , AdminCategoryComponent::class)->name('admin.categories');
     Route::get('/admin/all-products' , AdminProductsComponent::class)->name('admin.products.all');

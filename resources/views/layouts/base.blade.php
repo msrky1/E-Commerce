@@ -136,12 +136,12 @@
                                                 </p>
                                             </div>
                                         </li>
-
+                                        <li class="dropdown-footer p-0 text-center text-uppercase font-weight-bold">
+                                            <a href="/cart" class="p-3 d-block">Görüntüle</a>
+                                        </li>
                                     @endforeach
 
-                                    <li class="dropdown-footer p-0 text-center text-uppercase font-weight-bold">
-                                        <a href="/cart" class="p-3 d-block">Görüntüle</a>
-                                    </li>
+                                 
                                 @elseif(Cart::instance('cart')->count() == 0 )
                                     <br>
 
