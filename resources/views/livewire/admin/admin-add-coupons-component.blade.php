@@ -78,7 +78,7 @@
                                         <div class="input-group-prepend" wire:ignore>
                                             <span class="input-group-text"><i class="zmdi zmdi-calendar"></i></span>
                                         </div>
-                                        <input type="text" wire:model = "expiry_date" class="form-control date" placeholder="Örnek: 30/07/2021" >
+                                        <input type="text" wire:model = "expiry_date" class="form-control date" placeholder="Örnek: 2022-12-30" >
                                     </div>
                               
                            
